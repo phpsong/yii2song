@@ -1,18 +1,23 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: song
- * Date: 1/8/2016
- * Time: 5:46 PM
+ * @link https://github.com/yii2tech
+ * @copyright Copyright (c) 2015 Yii2tech
+ * @license [New BSD License](http://www.opensource.org/licenses/bsd-license.php)
  */
-namespace common\components\yii2song\uploadify;
 
-interface UploadifyInterface {
+namespace yii2tech\filestorage;
 
-    public function saveAs($file, $deleteTempFile = true);
-
-    public function fileList($path);
-
+/** 
+ * StorageInterface is an interface for the all file storages.
+ * File storage should be a hub for the [[BucketInterface]] instances.
+ *
+ * @see BucketInterface
+ *
+ * @author Paul Klimov <klimov.paul@gmail.com>
+ * @since 1.0
+ */
+interface StorageInterface
+{
     /**
      * Sets the list of available buckets.
      * @param array $buckets - set of bucket instances or bucket configurations.
